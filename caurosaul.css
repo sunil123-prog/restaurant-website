@@ -1,0 +1,58 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    outline: none;
+}
+.con{
+    width: 100%;
+    height: 100vh;
+    position: relative;
+}
+.con img{
+    width: 100%;
+    height: 80vh;
+}
+.cont{
+    position: absolute;
+    left: 30%;
+    width: 40%;
+    height: 200px;
+    top: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    border: 2px solid red;
+}
+.fa-circle-arrow-left{
+    position: absolute;
+    left: 10px;
+    top: 25%;
+    color: blueviolet;
+    font-size: 50px;
+}
+.fa-circle-arrow-left{
+    position: absolute;
+    left: 10px;
+    top: 33%;
+    color: blueviolet;
+    font-size: 50px;
+}
+.fa-circle-arrow-right{
+    position: absolute;
+    right: 10px;
+    top: 33%;
+    color: blueviolet;
+    font-size: 50px;
+}
+.dotcon{
+    width: 100%;
+    text-align: center;
+    letter-spacing: 4px;
+
+    font-size: 25px;
+    position: absolute;
+    bottom: 25%;
+    color: ghostwhite;
+}

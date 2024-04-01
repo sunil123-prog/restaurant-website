@@ -1,0 +1,43 @@
+/* Sidebar */
+.sidebar {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: white;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+  }
+  
+  /* Links inside the sidebar */
+  .sidebar a {
+    padding: 10px 15px;
+    text-decoration: none;
+    font-size: 18px;
+    color: white;
+    display: block;
+    transition: 0.3s;
+  }
+  
+  /* Change color on hover */
+  .sidebar a:hover {
+    color: #f1f1f1;
+  }
+  
+  /* The sidebar button */
+  .navbar-toggler {
+    position: absolute;
+    top: 0;
+    right: 10px;
+  }
+  
+  /* When the sidebar is collapsed, make the navbar-toggler visible */
+  @media screen and (min-width: 992px) {
+    .navbar-toggler {
+      display: none;
+    }
+  }
+  

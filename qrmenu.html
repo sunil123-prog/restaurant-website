@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QR Code Generator</title>
+  <script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
+  <link rel="stylesheet" href="qrmenu.css">
+</head>
+<body>
+    <!-- Header -->
+   
+    <div class="main">
+        
+        <div class="hmain">
+          
+              <h1>Menu Qr Generator <br>Generate QRCode for anymenu here..</h1>
+  <input type="text" id="input_text" placeholder="Type something..."><br>
+  <button class="button">Generate</button>
+  
+  
+  
+  </div>
+  <div class="qr-code"></div>
+  
+  
+
+  <script>
+    let btn = document.querySelector(".button");
+    let qr_code_element = document.querySelector(".qr-code");
+
+    btn.addEventListener("click", () => {
+      let user_input = document.querySelector("#input_text");
+      if (user_input.value.trim() !== "") {
+        generate(user_input.value.trim());
+      } else {
+        console.log("Invalid input");
+        qr_code_element.style.display = "none";
+      }
+    });
+
+    function generate(inputText) {
+      qr_code_element.innerHTML = ""; // Clear previous QR code if any
+
+      let qrcode = new QRCode(qr_code_element, {
+        text: inputText,
+        width: 280,
+        height: 280,
+        colorDark: "#000000",
+        colorLight: "#ffffff",
+        correctLevel: QRCode.CorrectLevel.H
+      });
+
+      // Create a download button
+      let download_link = document.createElement("a");
+      download_link.download = "qr_code.png";
+      download_link.href = qr_code_element.querySelector("canvas").toDataURL();
+      download_link.innerHTML = "Download QR Code";
+
+      qr_code_element.appendChild(download_link);
+      qr_code_element.style.backgroundColor='green';
+      qr_code_element.style.textAlign='center';
+      qr_code_element.style.padding='15px';
+      qr_code_element.style.borderRadius="4px";
+      qr_code_element.style.fontSize='18px';
+      
+      
+      // qr_code_element.insertBefore(document.createTextNode("\n\n"), download_link);
+      // qr_code_element.insertBefore(document.getElementById('btn'), qr_code_element.firstChild);
+    
+      
+
+    }
+  </script>
+</body>
+</html>

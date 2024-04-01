@@ -1,0 +1,107 @@
+.about{
+    text-align: center;
+    margin-top: 7%;
+    font-weight: bold;
+    color: blue;
+    border: 2px solid ghostwhite;
+    
+}
+.about:hover{
+    transition: all linear 5s;
+    color: black;
+    text-decoration: underline;
+}
+.card-img-top{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    position: relative;
+    left: 15%;
+   
+}
+.custom{
+    border: 2px solid grey;
+}
+body{
+    background-image: url('./aboutimg/abackground.jpg');
+    background-position:  center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+mark{
+    font-weight: bold;
+    background-color: grey;
+}
+i{
+    text-align: justify;
+}
+i,em{
+    color: rgb(216, 140, 8);
+    
+}
+/* ProgressBar */
+
+#progressBar {
+    --scrollAmount: 0%; /* The amount of scroll that has been done (between 0 and 1)*/
+    /* background-image: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%); */
+    /* width: var(--scrollAmount); */
+    background: linear-gradient(to right ,#f24e1e var(--scrollAmount),transparent 0);
+    height: 14px;
+    position: fixed;
+    top: 0;
+    left: 0;
+
+}
+hr{
+    color: blue;
+    
+}
+.col-md-6{
+    background-color: aliceblue;
+    border-top-right-radius: 50px;
+    border-bottom-left-radius: 50px;
+}
+/* .containers{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #bed;
+} */
+
+
+.tax:hover{
+    background-color: lightblue;
+}
+.img-fluid{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.head{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    /* background-color: burlywood; */
+    color: azure;
+    align-items: center;
+    padding: 0px 15px;
+    box-sizing: border-box;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+.desc{
+    width: 100%;
+    text-align: justify;
+    font-size: 15px;
+    color: blue;
+    display: none;
+    padding: 10px;
+    background-color: aliceblue;
+}
+.achead{
+    background-color: black;
+}

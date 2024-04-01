@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Restaurant Bill Payment</title>
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="paybill.css">
+</head>
+<body>
+
+<div class="container">
+    <h2 style="text-align: center;color: aliceblue;">Restaurant Bill Payment</h2>
+    <form id="billForm">
+        <div class="form-group">
+            <label for="itemName">Item Name:</label>
+            <input type="text" class="form-control" id="itemName">
+        </div>
+        <div class="form-group">
+            <label for="itemPrice">Item Price (per item):</label>
+            <input type="number" class="form-control" id="itemPrice" min="0" step="0.01">
+        </div>
+        <div class="form-group">
+            <label for="quantity">Quantity:</label>
+            <input type="number" class="form-control" id="quantity" min="1" value="1">
+        </div>
+        <button type="button" class="btn btn-primary" id="addItemBtn">Add Item</button>
+    </form>
+
+    <div id="billItems" class="mt-4">
+        <h4>Bill Items:</h4>
+        <ul id="itemsList"></ul>
+    </div>
+
+    <div class="form-group mt-4">
+        <label for="totalAmount">Total Amount:</label>
+        <input type="text" class="form-control" id="totalAmount" readonly>
+    </div>
+
+    <button type="button" class="btn btn-success" id="calculateBtn">Calculate Total</button>
+
+    <button type="button" class="btn btn-primary" id="addItemBtn" onclick="alert('You paid bill amount successfully!')">Paybill</button>
+
+</div>
+
+
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="paybill.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- <link rel="stylesheet" href="#"> -->
+  <title>SignUp</title>
+  <link rel="stylesheet" href="signup.css">
+  <link rel="icon" href="./loginimg/signuplogo.webp">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+ 
+</head>
+<body>
+    
+        
+      
+        <div class="container m-5">
+        <h2 style="text-align: center; color: aliceblue;">Sign Up</h2>
+  <form id="signupForm" onsubmit="return validateForm()">
+    <div class="form-group">
+      <label for="firstName">First Name:</label>
+      <input type="text" id="firstName" name="firstName">
+      <span class="error-message" id="firstNameError"></span>
+    </div>
+    <div class="form-group">
+      <label for="lastName">Last Name:</label>
+      <input type="text" id="lastName" name="lastName">
+      <span class="error-message" id="lastNameError"></span>
+    </div>
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email">
+      <span class="error-message" id="emailError"></span>
+    </div>
+    <div class="form-group">
+      <label for="mobile">Mobile:</label>
+      <input type="text" id="mobile" name="mobile">
+      <span class="error-message" id="mobileError"></span>
+    </div>
+    <div class="form-group">
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password">
+      <span class="error-message" id="passwordError"></span>
+    </div>
+    <div class="form-group">
+      <label for="confirmPassword">Confirm Password:</label>
+      <input type="password" id="confirmPassword" name="confirmPassword">
+      <span class="error-message" id="confirmPasswordError"></span>
+    </div>
+    <button type="submit" class="btn btn-block btn-success mb-5" onclick="alert('You have been  registered successfully!')">Submit</button>
+    <p>By clicking the Sign Up button,you agree to our <br>
+      <a href="https://policies.google.com/terms?hl=en-US">Terms and Conditions</a> and <a href="https://policies.google.com/privacy?hl=en-US">Policy Privacy</a></p>
+    </div>
+    <p class="para-2"> Already have an account?<a href="login.html" class="li" target="_blank">Login Here</a></p>
+
+  </form>
+  
+</div>
+
+<script>
+  function validateForm() {
+    // Resetting error messages
+    document.getElementById("firstNameError").innerText = "";
+    document.getElementById("lastNameError").innerText = "";
+    document.getElementById("emailError").innerText = "";
+    document.getElementById("mobileError").innerText = "";
+    document.getElementById("passwordError").innerText = "";
+    document.getElementById("confirmPasswordError").innerText = "";
+
+    // Fetching form values
+    var firstName = document.getElementById("firstName").value.trim();
+    var lastName = document.getElementById("lastName").value.trim();
+    var email = document.getElementById("email").value.trim();
+    var mobile = document.getElementById("mobile").value.trim();
+    var password = document.getElementById("password").value;
+    var confirmPassword = document.getElementById("confirmPassword").value;
+
+    // Validation rules
+    var valid = true;
+
+    if (firstName === "") {
+      valid = false;
+      document.getElementById("firstNameError").innerText = "First name is required";
+    }
+
+    if (lastName === "") {
+      valid = false;
+      document.getElementById("lastNameError").innerText = "Last name is required";
+    }
+
+    if (email === "") {
+      valid = false;
+      document.getElementById("emailError").innerText = "Email is required";
+    } else if (!validateEmail(email)) {
+      valid = false;
+      document.getElementById("emailError").innerText = "Invalid email format";
+    }
+
+    if (mobile === "") {
+      valid = false;
+      document.getElementById("mobileError").innerText = "Mobile is required";
+    } else if (!validateMobile(mobile)) {
+      valid = false;
+      document.getElementById("mobileError").innerText = "Invalid mobile format";
+    }
+
+    if (password === "") {
+      valid = false;
+      document.getElementById("passwordError").innerText = "Password is required";
+    }
+
+    if (confirmPassword === "") {
+      valid = false;
+      document.getElementById("confirmPasswordError").innerText = "Confirm password is required";
+    } else if (confirmPassword !== password) {
+      valid = false;
+      document.getElementById("confirmPasswordError").innerText = "Passwords do not match";
+    }
+
+    return valid;
+  }
+
+  // Email validation function
+  function validateEmail(email) {
+    var re = /\S+@\S+\.\S+/;
+    return re.test(email);
+  }
+
+  // Mobile validation function (simple validation for demonstration)
+  function validateMobile(mobile) {
+    var re = /^\d{10}$/;
+    return re.test(mobile);
+  }
+</script>
+
+
+
+
+      
+
+
+    
+</body>
+</html>

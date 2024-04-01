@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="login.css">
+    <link rel="icon" href="./loginimg/login.png">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style>
+        /* Basic CSS for styling */
+        body {
+          font-family: Arial, sans-serif;
+        }
+        .form-group {
+          margin-bottom: 20px;
+        }
+        .form-group label {
+          display: block;
+          margin-bottom: 5px;
+        }
+        .form-group input {
+          width: 100%;
+          padding: 8px;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+          box-sizing: border-box;
+        }
+        .error-message {
+          color: red;
+          font-size: 14px;
+        }
+      </style>
+</head>
+<body>
+   
+      
+      
+      <div class="container">
+        <h2 style="text-align: center; color: aliceblue;">Login</h2>
+        <form id="signupForm" onsubmit="return validateForm()">
+          <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email">
+            <span class="error-message" id="emailError"></span>
+          </div>
+          <div class="form-group">
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password">
+            <span class="error-message" id="passwordError"></span>
+          </div>
+          <button type="submit" class="btn btn-success btn-block" onclick="alert('You have been logged Successfully!')">Login</button>
+          <p>By clicking the Sign Up button,you agree to our <br>
+            <a href="https://policies.google.com/terms?hl=en-US">Terms and Conditions</a> and <a href="https://policies.google.com/privacy?hl=en-US">Policy Privacy</a></p>
+          </div>
+          <p class="para-2"> Already have an account?<a href="signup.html" class="li" target="_blank">Login Here</a></p>
+        </form>
+      </div>
+      
+      <script>
+        function validateForm() {
+          // Resetting error messages
+          document.getElementById("emailError").innerText = "";
+          document.getElementById("passwordError").innerText = "";
+      
+          // Fetching form values
+          var email = document.getElementById("email").value.trim();
+          var password = document.getElementById("password").value;
+      
+          // Validation rules
+          var valid = true;
+      
+          if (email === "") {
+            valid = false;
+            document.getElementById("emailError").innerText = "Email is required";
+          } else if (!validateEmail(email)) {
+            valid = false;
+            document.getElementById("emailError").innerText = "Invalid email format";
+          }
+      
+          if (password === "") {
+            valid = false;
+            document.getElementById("passwordError").innerText = "Password is required";
+          } else if (password.length < 6) {
+            valid = false;
+            document.getElementById("passwordError").innerText = "Password must be at least 6 characters long";
+          }
+      
+          return valid;
+        }
+      
+        // Email validation function
+        function validateEmail(email) {
+          var re = /\S+@\S+\.\S+/;
+          return re.test(email);
+        }
+      </script>
+</body>
+</html>

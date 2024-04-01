@@ -1,0 +1,22 @@
+.mcon .card-img-top{
+    width: 320px;
+    height: 150px;
+}
+.mhead{
+    text-align: center;
+    font-size: 45px;
+    color: blue;
+    background-color: antiquewhite;
+}
+
+.fa-solid{
+    color: green;
+}
+img .img-fluid{
+    width: 250px;
+    height: 100px;
+}
+
+.breadcrumb-item .card-img-top{
+    height: 150px;
+}

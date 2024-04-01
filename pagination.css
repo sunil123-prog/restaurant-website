@@ -1,0 +1,22 @@
+.pagination-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+
+  .pagination-container .pagination li {
+    cursor: pointer;
+  }
+
+  .pagination-container .pagination .page-link {
+    color: #000;
+  }
+
+  .pagination-container .pagination .page-item.active .page-link {
+    background-color: #007bff;
+    border-color: #007bff;
+  }
+
+  .pagination-container .pagination .page-link:focus {
+    box-shadow: none;
+  }
