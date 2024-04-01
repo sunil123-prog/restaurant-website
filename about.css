@@ -104,4 +104,11 @@ hr{
 }
 .achead{
     background-color: black;
+    padding: 25px;
+}
+
+.zz{
+    color: aliceblue;
+
+    cursor: pointer;
 }
